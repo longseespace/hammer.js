@@ -7,7 +7,12 @@
   'use strict';
 
 var VENDOR_PREFIXES = ['', 'webkit', 'moz', 'MS', 'ms', 'o'];
-var TEST_ELEMENT = document.createElement('div');
+// var TEST_ELEMENT = document.createElement('div');
+var TEST_ELEMENT = {
+    style: {
+        touchAction: 'compute'
+    }
+};
 
 var TYPE_FUNCTION = 'function';
 
@@ -491,6 +496,7 @@ function computeInputData(manager, input) {
     var offsetCenter = firstMultiple ? firstMultiple.center : firstInput.center;
 
     var center = input.center = getCenter(pointers);
+
     input.timeStamp = now();
     input.deltaTime = input.timeStamp - firstInput.timeStamp;
 
@@ -1333,6 +1339,8 @@ Recognizer.prototype = {
         if (invokeArrayArg(otherRecognizer, 'requireFailure', this)) {
             return this;
         }
+
+        console.log('requireFailure', this, otherRecognizer)
 
         var requireFail = this.requireFail;
         otherRecognizer = getRecognizerByNameIfManager(otherRecognizer, this);

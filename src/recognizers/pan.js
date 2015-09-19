@@ -27,10 +27,10 @@ inherit(PanRecognizer, AttrRecognizer, {
         var direction = this.options.direction;
         var actions = [];
         if (direction & DIRECTION_HORIZONTAL) {
-            actions.push(TOUCH_ACTION_PAN_X);
+            actions.push(TOUCH_ACTION_PAN_Y);
         }
         if (direction & DIRECTION_VERTICAL) {
-            actions.push(TOUCH_ACTION_PAN_Y);
+            actions.push(TOUCH_ACTION_PAN_X);
         }
         return actions;
     },
@@ -65,15 +65,14 @@ inherit(PanRecognizer, AttrRecognizer, {
     },
 
     emit: function(input) {
-
         this.pX = input.deltaX;
         this.pY = input.deltaY;
 
         var direction = directionStr(input.direction);
-
         if (direction) {
-            input.additionalEvent = this.options.event + direction;
+            this.manager.emit(this.options.event + direction, input);
         }
+
         this._super.emit.call(this, input);
     }
 });

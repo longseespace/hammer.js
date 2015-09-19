@@ -1,5 +1,10 @@
 var VENDOR_PREFIXES = ['', 'webkit', 'moz', 'MS', 'ms', 'o'];
-var TEST_ELEMENT = document.createElement('div');
+// var TEST_ELEMENT = document.createElement('div');
+var TEST_ELEMENT = {
+    style: {
+        touchAction: ''
+    }
+};
 
 var TYPE_FUNCTION = 'function';
 
@@ -312,6 +317,6 @@ function uniqueId() {
  * @returns {DocumentView|Window}
  */
 function getWindowForElement(element) {
-    var doc = element.ownerDocument || element;
-    return (doc.defaultView || doc.parentWindow || window);
+    var doc = element.ownerDocument;
+    return (doc.defaultView || doc.parentWindow);
 }

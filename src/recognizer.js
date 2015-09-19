@@ -40,13 +40,10 @@ var STATE_FAILED = 32;
  * @param {Object} options
  */
 function Recognizer(options) {
-    // make sure, options are copied over to a new object to prevent leaking it outside
-    options = extend({}, options || {});
-
     this.id = uniqueId();
 
     this.manager = null;
-    this.options = merge(options, this.defaults);
+    this.options = merge(options || {}, this.defaults);
 
     // default is enable true
     this.options.enable = ifUndefined(this.options.enable, true);
@@ -174,24 +171,20 @@ Recognizer.prototype = {
         var self = this;
         var state = this.state;
 
-        function emit(event) {
-            self.manager.emit(event, input);
+        function emit(withState) {
+            self.manager.emit(self.options.event + (withState ? stateStr(state) : ''), input);
         }
 
         // 'panstart' and 'panmove'
         if (state < STATE_ENDED) {
-            emit(self.options.event + stateStr(state));
+            emit(true);
         }
 
-        emit(self.options.event); // simple 'eventName' events
-
-        if (input.additionalEvent) { // additional event(panleft, panright, pinchin, pinchout...)
-            emit(input.additionalEvent);
-        }
+        emit(); // simple 'eventName' events
 
         // panend and pancancel
         if (state >= STATE_ENDED) {
-            emit(self.options.event + stateStr(state));
+            emit(true);
         }
     },
 

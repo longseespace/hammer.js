@@ -30,22 +30,21 @@ inherit(SwipeRecognizer, AttrRecognizer, {
         var velocity;
 
         if (direction & (DIRECTION_HORIZONTAL | DIRECTION_VERTICAL)) {
-            velocity = input.overallVelocity;
+            velocity = input.velocity;
         } else if (direction & DIRECTION_HORIZONTAL) {
-            velocity = input.overallVelocityX;
+            velocity = input.velocityX;
         } else if (direction & DIRECTION_VERTICAL) {
-            velocity = input.overallVelocityY;
+            velocity = input.velocityY;
         }
 
         return this._super.attrTest.call(this, input) &&
-            direction & input.offsetDirection &&
+            direction & input.direction &&
             input.distance > this.options.threshold &&
-            input.maxPointers == this.options.pointers &&
             abs(velocity) > this.options.velocity && input.eventType & INPUT_END;
     },
 
     emit: function(input) {
-        var direction = directionStr(input.offsetDirection);
+        var direction = directionStr(input.direction);
         if (direction) {
             this.manager.emit(this.options.event + direction, input);
         }

@@ -19,7 +19,7 @@ module.exports = (grunt) ->
     concat:
       build:
         src: [
-          'src/hammer.prefix.js'
+          'src/hammer.prefix'
           'src/utils.js'
           'src/input.js'
           'src/input/*.js'
@@ -29,7 +29,7 @@ module.exports = (grunt) ->
           'src/hammer.js'
           'src/manager.js'
           'src/expose.js'
-          'src/hammer.suffix.js']
+          'src/hammer.suffix']
         dest: 'hammer.js'
 
     uglify:
@@ -80,9 +80,8 @@ module.exports = (grunt) ->
 
     jscs:
       src: [
-        'src/**/*.js',
-        '!src/hammer.prefix.js',
-        '!src/hammer.suffix.js'
+        'src/**/*.js'
+        'tests/unit/*.js'
       ]
       options:
         config: "./.jscsrc"
@@ -114,7 +113,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-connect'
   grunt.loadNpmTasks 'grunt-string-replace'
   grunt.loadNpmTasks 'grunt-banner'
-  grunt.loadNpmTasks 'grunt-jscs'
+  grunt.loadNpmTasks 'grunt-jscs-checker'
 
   # Default task(s)
   grunt.registerTask 'default', ['connect', 'watch']

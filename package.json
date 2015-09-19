@@ -4,7 +4,12 @@
   "description": "A javascript library for multi-touch gestures",
   "version": "2.0.4",
   "homepage": "http://hammerjs.github.io/",
-  "license": "MIT",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/hammerjs/hammer.js/blob/master/LICENSE.md"
+    }
+  ],
   "keywords": [
     "touch",
     "gestures"
@@ -30,9 +35,9 @@
     "grunt-contrib-qunit": "^0.5.1",
     "grunt-contrib-uglify": "0.4.x",
     "grunt-contrib-watch": "0.6.x",
-    "grunt-jscs": "^0.8.0",
+    "grunt-jscs-checker": "^0.4.1",
     "grunt-string-replace": "^0.2.7",
-    "jquery-hammerjs": "2.0.x",
+    "hammer-jquery": "git://github.com/hammerjs/jquery.hammer.js#master",
     "hammer-simulator": "git://github.com/hammerjs/simulator#master"
   },
   "main": "hammer.js",
@@ -41,5 +46,27 @@
   },
   "scripts": {
     "test": "grunt test"
-  }
+  },
+  "gitHead": "702e675f1bab25d5f6997989d43aaa5eae384f54",
+  "_id": "hammerjs@2.0.4",
+  "_shasum": "e161706d2e610ef295b16eadc515df7d9c59aa23",
+  "_from": "hammerjs@*",
+  "_npmVersion": "1.4.14",
+  "_npmUser": {
+    "name": "jtangelder",
+    "email": "j.tangelder@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "jtangelder",
+      "email": "j.tangelder@gmail.com"
+    }
+  ],
+  "dist": {
+    "shasum": "e161706d2e610ef295b16eadc515df7d9c59aa23",
+    "tarball": "http://registry.npmjs.org/hammerjs/-/hammerjs-2.0.4.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/hammerjs/-/hammerjs-2.0.4.tgz",
+  "readme": "ERROR: No README data found!"
 }
