@@ -1,8 +1,8 @@
 {
   "name": "react-native-hammerjs",
   "title": "React Native Hammer.JS",
-  "description": "A javascript library for multi-touch gestures",
-  "version": "2.0.4",
+  "description": "Hammer.JS for React Native",
+  "version": "2.0.5",
   "homepage": "http://hammerjs.github.io/",
   "licenses": [
     {
@@ -15,8 +15,8 @@
     "gestures"
   ],
   "author": {
-    "name": "Jorik Tangelder",
-    "email": "j.tangelder@gmail.com"
+    "name": "Long Nguyen",
+    "email": "long@seespace.co"
   },
   "repository": {
     "type": "git",
@@ -56,19 +56,14 @@
   "_from": "hammerjs@*",
   "_npmVersion": "1.4.14",
   "_npmUser": {
-    "name": "jtangelder",
-    "email": "j.tangelder@gmail.com"
+    "name": "longseespace",
+    "email": "long@seespace.co"
   },
   "maintainers": [
     {
-      "name": "jtangelder",
-      "email": "j.tangelder@gmail.com"
+      "name": "longseespace",
+      "email": "long@seespace.co"
     }
   ],
-  "dist": {
-    "shasum": "e161706d2e610ef295b16eadc515df7d9c59aa23",
-    "tarball": "http://registry.npmjs.org/hammerjs/-/hammerjs-2.0.4.tgz"
-  },
-  "directories": {},
-  "_resolved": "https://registry.npmjs.org/hammerjs/-/hammerjs-2.0.4.tgz"
+  "directories": {}
 }
