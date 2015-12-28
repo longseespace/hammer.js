@@ -3,6 +3,9 @@
  *
  * Copyright (c) 2014 Jorik Tangelder;
  * Licensed under the MIT license */
+
+var document = function () {};
+
 (function(window, document, exportName, undefined) {
   'use strict';
 
