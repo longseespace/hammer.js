@@ -7,7 +7,7 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/hammerjs/hammer.js/blob/master/LICENSE.md"
+      "url": "https://github.com/longseespace/hammer.js/blob/master/LICENSE.md"
     }
   ],
   "keywords": [
@@ -20,10 +20,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/hammerjs/hammer.js.git"
+    "url": "git://github.com/longseespace/hammer.js.git"
   },
   "bugs": {
-    "url": "https://github.com/hammerjs/hammer.js/issues"
+    "url": "https://github.com/longseespace/hammer.js/issues"
   },
   "dependencies": {},
   "peerDependencies": {
@@ -70,6 +70,5 @@
     "tarball": "http://registry.npmjs.org/hammerjs/-/hammerjs-2.0.4.tgz"
   },
   "directories": {},
-  "_resolved": "https://registry.npmjs.org/hammerjs/-/hammerjs-2.0.4.tgz",
-  "readme": "ERROR: No README data found!"
+  "_resolved": "https://registry.npmjs.org/hammerjs/-/hammerjs-2.0.4.tgz"
 }
