@@ -29,6 +29,18 @@ GestureRecognizer = function() {
         ev.type = type;
         ev.x = ev.clientX = ev.screenX = ev.locationX;
         ev.y = ev.clientY = ev.screenY = ev.locationY;
+        ev.target = _fakeElement;
+        ev.touches.forEach( (touch) => {
+          touch.x = touch.clientX = touch.screenX = touch.locationX;
+          touch.y = touch.clientY = touch.screenY = touch.locationY;
+          touch.target = _fakeElement;
+        });
+        ev.changedTouches.forEach( (touch) => {
+          touch.x = touch.clientX = touch.screenX = touch.locationX;
+          touch.y = touch.clientY = touch.screenY = touch.locationY;
+          touch.target = _fakeElement;
+        });
+
         handler(ev);
       };
     }.bind(this),
