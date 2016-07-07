@@ -26,9 +26,6 @@
     "url": "https://github.com/longseespace/hammer.js/issues"
   },
   "dependencies": {},
-  "peerDependencies": {
-    "react-native": "0.17.x"
-  },
   "devDependencies": {
     "grunt": "0.4.x",
     "grunt-banner": "^0.2.3",
