@@ -1,4 +1,5 @@
 var Hammer = require('./hammer');
+let _ = require("lodash");
 
 GestureRecognizer = function() {
   var noop = function() {
@@ -24,8 +25,10 @@ GestureRecognizer = function() {
 
   var _fakeElement = {
     addEventListener: function(type, handler, flag) {
-      this._mcEventHandlers[type] = function(ev) {
-        // console.log(ev)
+      this._mcEventHandlers[type] = function(event) {
+        let ev = _.cloneDeep(event);
+        // console.log(ev);
+
         ev.type = type;
         ev.x = ev.clientX = ev.screenX = ev.locationX;
         ev.y = ev.clientY = ev.screenY = ev.locationY;
